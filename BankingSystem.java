@@ -40,12 +40,12 @@ public class BankingSystem {
         }
 
         if (loggedIn == null) {
-            System.out.println("❌ Invalid Login ID or Password!");
+            System.out.println("Invalid Login ID or Password!");
             System.out.println("Exiting system...");
             return;
         }
 
-        System.out.println("\n✅ Login Successful! Welcome, " + loggedIn.userId + "\n");
+        System.out.println("\nLogin Successful! Welcome, " + loggedIn.userId + "\n");
 
         // --- Step 3: Banking operations ---
         int choice;
@@ -60,7 +60,7 @@ public class BankingSystem {
 
             switch (choice) {
                 case 1:
-                    System.out.println("💰 Current Balance: ₹" + loggedIn.balance);
+                    System.out.println("Current Balance: ₹" + loggedIn.balance);
                     break;
 
                 case 2:
@@ -68,9 +68,9 @@ public class BankingSystem {
                     double creditAmount = sc.nextDouble();
                     if (creditAmount > 0) {
                         loggedIn.balance += creditAmount;
-                        System.out.println("✅ Amount credited successfully!");
+                        System.out.println("Amount credited successfully!");
                     } else {
-                        System.out.println("❌ Invalid amount!");
+                        System.out.println("Invalid amount!");
                     }
                     break;
 
@@ -79,20 +79,20 @@ public class BankingSystem {
                     double debitAmount = sc.nextDouble();
                     if (debitAmount > 0 && debitAmount <= loggedIn.balance) {
                         loggedIn.balance -= debitAmount;
-                        System.out.println("✅ Amount debited successfully!");
+                        System.out.println("Amount debited successfully!");
                     } else if (debitAmount > loggedIn.balance) {
-                        System.out.println("❌ Insufficient balance!");
+                        System.out.println("Insufficient balance!");
                     } else {
-                        System.out.println("❌ Invalid amount!");
+                        System.out.println("Invalid amount!");
                     }
                     break;
 
                 case 4:
-                    System.out.println("👋 Thank you for using the Banking System!");
+                    System.out.println("Thank you for using the Banking System!");
                     break;
 
                 default:
-                    System.out.println("⚠️ Invalid choice! Please try again.");
+                    System.out.println("Invalid choice! Please try again.");
             }
             System.out.println();
 
@@ -101,3 +101,4 @@ public class BankingSystem {
         sc.close();
     }
 }
+
